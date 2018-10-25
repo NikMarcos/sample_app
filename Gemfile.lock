@@ -60,11 +60,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.1.0)
     minitest (4.7.5)
     multi_json (1.13.1)
-    nokogiri (1.8.5)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     pg (0.15.1)
     polyglot (0.3.5)
     rack (1.5.5)
@@ -175,7 +175,7 @@ DEPENDENCIES
   uglifier (= 2.1.1)
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.0.0p648
 
 BUNDLED WITH
    1.16.2
