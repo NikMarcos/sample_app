@@ -70,4 +70,21 @@ it "should have the base title" do
       expect(page).to have_content( 'About Us' )
     end
   end
+  describe "Author" do
+
+    it "should have the title 'Author'" do
+      visit '/static_pages/author'
+      expect(page).to have_title( "#{base_title} | Author" )
+    end
+
+    it "should have the base title" do
+          visit '/static_pages/author'
+          expect(page).to have_title( "#{base_title}" )
+        end
+
+    it "should have the content 'Author name'" do
+      visit '/static_pages/author'
+      expect(page).to have_content('author name')
+    end
+  end
 end
