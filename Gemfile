@@ -6,10 +6,11 @@ gem 'rails', '4.0.2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 3.8', '>= 3.8.1'
   gem 'spork-rails', '4.0.0'
   gem 'guard-spork', '~> 2.1'
   gem 'childprocess', '0.9.0'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
 end
 
 group :test do
