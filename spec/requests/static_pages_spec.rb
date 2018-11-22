@@ -2,10 +2,16 @@ require 'spec_helper'
 
 describe "Static pages" do
 
+  subject { page }
+
   let(:base_title) { "Ruby on Rails Tutorial Sample App" }
 
   describe "Contact page" do
     before {visit '/contact'}
+
+  it "should have the content 'Contact'" do
+    expect(page).to have_content('Contact')
+  end
 
   it "should have the right title" do
   expect(page).to have_title(" #{base_title} | Contact ")
@@ -78,5 +84,20 @@ before {visit '/author'}
     it "should have the content 'Author name'" do
       expect(page).to have_content('author name')
     end
+  end
+
+  it "should have the right links on the layout" do
+    visit "/"
+    click_link "About"
+    expect(page).to have_title("#{base_title} | About Us")
+    click_link "Help"
+    expect(page).to have_title("#{base_title} | Help")
+    click_link "Contact"
+    expect(page).to have_title("#{base_title} | Contact")
+    click_link "Home"
+    click_link "Sign up now!"
+    expect(page).to have_title("#{base_title} | Sign Up")
+    click_link "Sample app"
+    expect(page).to have_title("#{base_title} | Sample app")
   end
 end
