@@ -3,14 +3,19 @@ require 'spec_helper'
 describe User do
 
   before do
+<<<<<<< HEAD
     @user = User.new(name: "Example User", email: "user@example.com",
     password: "foobar", password_confirmation: "foobar")
+=======
+    @user = User.new(name: "Example User", email: "user@example.com")
+>>>>>>> modeling-users
   end
 
   subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+<<<<<<< HEAD
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
@@ -24,6 +29,17 @@ describe User do
   end
 
   describe "when email is not present" do
+=======
+
+  it { should be_valid }
+
+ describe "when name is not present" do
+   before { @user.name = " " }
+   it { should_not be_valid }
+ end
+
+ describe "when email is not present" do
+>>>>>>> modeling-users
     before { @user.email = " " }
     it { should_not be_valid }
   end
@@ -57,13 +73,17 @@ describe User do
   describe "when email address is already taken" do
     before do
       user_with_same_email = @user.dup
+<<<<<<< HEAD
       user_with_same_email.email = @user.email.upcase
+=======
+>>>>>>> modeling-users
       user_with_same_email.save
     end
 
     it { should_not be_valid }
   end
 
+<<<<<<< HEAD
   describe "when password is not present" do
     before do
       @user = User.new(name: "Example User", email: "user@example.com",
@@ -94,4 +114,6 @@ describe User do
     end
   end
 
+=======
+>>>>>>> modeling-users
 end
