@@ -1,0 +1,31 @@
+
+An error occurred while loading ./rspec.
+Failure/Error: load_dependency(file) { result = super }
+
+LoadError:
+  cannot load such file -- /Users/nikita/rails_projects/sample_app/rspec
+# /Users/nikita/.rvm/gems/ruby-2.0.0-p648/gems/activesupport-4.0.2/lib/active_support/dependencies.rb:223:in `load'
+# /Users/nikita/.rvm/gems/ruby-2.0.0-p648/gems/activesupport-4.0.2/lib/active_support/dependencies.rb:223:in `block in load'
+# /Users/nikita/.rvm/gems/ruby-2.0.0-p648/gems/activesupport-4.0.2/lib/active_support/dependencies.rb:214:in `load_dependency'
+# /Users/nikita/.rvm/gems/ruby-2.0.0-p648/gems/activesupport-4.0.2/lib/active_support/dependencies.rb:223:in `load'
+
+An error occurred while loading ./signup with invalid information.
+Failure/Error: load_dependency(file) { result = super }
+
+LoadError:
+  cannot load such file -- /Users/nikita/rails_projects/sample_app/signup with invalid information
+# /Users/nikita/.rvm/gems/ruby-2.0.0-p648/gems/activesupport-4.0.2/lib/active_support/dependencies.rb:223:in `load'
+# /Users/nikita/.rvm/gems/ruby-2.0.0-p648/gems/activesupport-4.0.2/lib/active_support/dependencies.rb:223:in `block in load'
+# /Users/nikita/.rvm/gems/ruby-2.0.0-p648/gems/activesupport-4.0.2/lib/active_support/dependencies.rb:214:in `load_dependency'
+# /Users/nikita/.rvm/gems/ruby-2.0.0-p648/gems/activesupport-4.0.2/lib/active_support/dependencies.rb:223:in `load'
+
+Randomized with seed 12644
+
+
+1 deprecation warning total
+
+Finished in 0.00025 seconds (files took 3.58 seconds to load)
+0 examples, 0 failures, 2 errors occurred outside of examples
+
+Randomized with seed 12644
+

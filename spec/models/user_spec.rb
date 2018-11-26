@@ -3,19 +3,16 @@ require 'spec_helper'
 describe User do
 
   before do
-<<<<<<< HEAD
     @user = User.new(name: "Example User", email: "user@example.com",
     password: "foobar", password_confirmation: "foobar")
-=======
-    @user = User.new(name: "Example User", email: "user@example.com")
->>>>>>> modeling-users
+
+    #@user = User.new(name: "Example User", email: "user@example.com")
   end
 
   subject { @user }
 
   it { should respond_to(:name) }
   it { should respond_to(:email) }
-<<<<<<< HEAD
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
@@ -29,7 +26,6 @@ describe User do
   end
 
   describe "when email is not present" do
-=======
 
   it { should be_valid }
 
@@ -39,7 +35,6 @@ describe User do
  end
 
  describe "when email is not present" do
->>>>>>> modeling-users
     before { @user.email = " " }
     it { should_not be_valid }
   end
@@ -51,12 +46,22 @@ describe User do
 
   describe "when email format is invalid" do
     it "should be invalid" do
-      addresses = %w[user@foo,com user_at_foo.org example.user@foo.
+      addresses = %w[user@foo,com foo@bar..com user_at_foo.org example.user@foo.
                      foo@bar_baz.com foo@bar+baz.com]
       addresses.each do |invalid_address|
         @user.email = invalid_address
         expect(@user).not_to be_valid
       end
+    end
+  end
+
+  describe "email address with mixed case" do
+    let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
+
+    it "should be saved as all lower-case" do
+      @user.email = mixed_case_email
+      @user.save
+      expect(@user.reload.email).to eq mixed_case_email.downcase
     end
   end
 
@@ -70,20 +75,19 @@ describe User do
     end
   end
 
+
+
   describe "when email address is already taken" do
     before do
       user_with_same_email = @user.dup
-<<<<<<< HEAD
+
       user_with_same_email.email = @user.email.upcase
-=======
->>>>>>> modeling-users
       user_with_same_email.save
     end
 
     it { should_not be_valid }
   end
 
-<<<<<<< HEAD
   describe "when password is not present" do
     before do
       @user = User.new(name: "Example User", email: "user@example.com",
@@ -99,6 +103,7 @@ describe User do
     before { @user.password_confirmation = "mismatch" }
     it { should_not be_valid }
   end
+
   describe "return value of authenticate method" do
     before { @user.save }
     let(:found_user) { User.find_by(email: @user.email) }
@@ -111,9 +116,8 @@ describe User do
       let(:user_for_invalid_password) { found_user.authenticate("invalid") }
       it { should_not eq user_for_invalid_password }
       specify { expect(user_for_invalid_password).to be_falsey }
+      end
+
     end
   end
-
-=======
->>>>>>> modeling-users
 end

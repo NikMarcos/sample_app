@@ -95,9 +95,9 @@ before {visit '/author'}
     click_link "Contact"
     expect(page).to have_title("#{base_title} | Contact")
     click_link "Home"
+    expect(page).to have_title("#{base_title}")
     click_link "Sign up now!"
-    expect(page).to have_title("#{base_title} | Sign Up")
-    click_link "Sample app"
-    expect(page).to have_title("#{base_title} | Sample app")
+    expect(page).to have_title("#{base_title} | Sign up")
   end
+
 end
